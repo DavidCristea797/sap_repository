@@ -27,3 +27,51 @@
 |===
 
 Daten müssen von einem System ins andere Migriert (Portierung) werden.
+
+== Betriebswirtschaftliche SW
+=== Customizing:
+* Grundeinstellungen des Systems
+* Ergänzen von Auswahllisten
+* Abbilden von Geschäftsprozessen
+
+Wenn der Standard nicht ausreicht. -> ABAP-Entwicklung
+
+== Modularer Aufbau von SAP ERP:
+*Es gibt viele Module, die verschiedene Geschäftsbereiche abdecken:*
+
+* FI (Financial Accounting)
+* MM (Materials Management)
+* RC (Human Capital Management)
+
+== Anpassbarkeit:
+* Customizing:
+** Bsp. Bestand < 0 -> Warnung
+* kleine Interpreter
+** Bsp. Formularinterpreter
+* kundenspezifische Code
+** User-Exits (leere Methoden, durch Kunden anpassbar)
+** Ableitung eigerner Klassen
+* SAP-Code ändern
+** Support, Releasewechsel
+
+== SAP Business Suite
+image::assets/SAP Elemente.png[]
+image::assets/bs2.jpg[]
+
++ SAP ERP
++ SAP ERP Financials
++ SAP ERP Human Capital Management
+-> Basis für SAP S/4 HANA
+
+== Betriebswirtschaftliche SW
+* *SAP-CRM:* Actives Kundenmanagement  (Unterstützt Mitarbeiter mit Kunden in kontakt zu bleiben)
+** BMW Regengewand
+* *SAP-SRM:* Lieferantenmanagement (Lieferant hat Einblick auf mein Lagerbestand)
+* *SAP-PLM:* Produktlebenszyklus management (Gesamte Lebenszyklus eines Produktes, von der Entwicklung bis zur Entsorgung)
+** Beispiel: Pickel, Nespresso Kapseln
+* *SAP-SCM:* Supply Chain Management (Lieferkette optimieren, Lagerbestände minimieren)
+
+== Begriffe
+* *Best Practice:* Die installation und übungsdatenbank von SAP
+* *Brownfield-Ansätze:* Bestehende Systeme werden auf neue Versionen aktualisiert
+* *Greenfield-Ansätze:* Neues System wird von Grund auf neu implementiert
