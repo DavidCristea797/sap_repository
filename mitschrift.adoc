@@ -1,0 +1,29 @@
+= SAP Mitschrift
+
+* Walldorf: Headquarters von SAP in Walldorf, Deutschland
+
+== Betriebswirtschaftliche SW
+* ERP: Enterprise Resource Planning (Unternehmensressourcenplanung)
+* SAP: Systems, Applications, and Products in Data Processing (Unternehmenssoftware)
+* SAP ist eine Standardsoftware, die für viele Unternehmen anpassbar ist.
+
+== SAP Systemüberblick
+* SAP R/3 (ERP 6.0) EHP8
+** Datenbank: Oracle 19c
+** Programmiersprache: ABAP (Advanced Business Application Programming)
+
+* SAP S/4 HANA
+** Wurde im 2015 veröffentlicht
+** Datenbank: HANA (In-Memory-Plattform, >1TB RAM)
+** Programmiersprache: FIORI
+
+|===
+| Abkürzung | Bedeutung
+
+| EHP   | Enhancement Package
+| HANA  | High-Performance Analytic Appliance
+| ABAP  | Advanced Business Application Programming
+| FIORI | SAP User Interface
+|===
+
+Daten müssen von einem System ins andere Migriert (Portierung) werden.
