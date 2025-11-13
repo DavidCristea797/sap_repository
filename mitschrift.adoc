@@ -68,8 +68,28 @@ image::assets/bs2.jpg[]
 ** BMW Regengewand
 * *SAP-SRM:* Lieferantenmanagement (Lieferant hat Einblick auf mein Lagerbestand)
 * *SAP-PLM:* Produktlebenszyklus management (Gesamte Lebenszyklus eines Produktes, von der Entwicklung bis zur Entsorgung)
-** Beispiel: Pickel, Nespresso Kapseln
+** Beispiel: Pickerl, Nespresso Kapseln
 * *SAP-SCM:* Supply Chain Management (Lieferkette optimieren, Lagerbestände minimieren)
+
+== Klassensystem
+Merkmale anlegen -> Klasse mit Merkmalen anlegen -> Klasse Material zuordnen und befüllen
+
+== Übungen
+=== Aufgabe 01
+* Primary Key: Eindeutige Identifikation eines Datensatzes *_-> ES KANN NICHT GEÄNDERT WERDEN_*
+
+==== Materialstamm anlegen
+* Mandant: Höchste Organisationseinheit z.B. (100,Konzern)
+* Buchungskreis: Kleinste Einheit eines Unternehmens z.B. (1010, Company Code 1010)
+* Werk: Ort der Produktion/Lagerung (1010, Plant 1 DE)
+* Lagerort: Ort innerhalb eines Werks (0001, Sekt.33)
+
+
+== Transaktionscodes
+* *mm01*: Material anlegen
+* *mm02*: Material ändern
+* *mm03*: Material anzeigen
+* *mmbe*: Bestandsübersicht
 
 == Begriffe
 * *Best Practice:* Die installation und übungsdatenbank von SAP
