@@ -1,97 +1,105 @@
 = SAP Mitschrift
 
-* Walldorf: Headquarters von SAP in Walldorf, Deutschland
+:toc:
 
-== Betriebswirtschaftliche SW
-* ERP: Enterprise Resource Planning (Unternehmensressourcenplanung)
-* SAP: Systems, Applications, and Products in Data Processing (Unternehmenssoftware)
-* SAP ist eine Standardsoftware, die für viele Unternehmen anpassbar ist.
+== Kurzübersicht
 
-== SAP Systemüberblick
-* SAP R/3 (ERP 6.0) EHP8
-** Datenbank: Oracle 19c
-** Programmiersprache: ABAP (Advanced Business Application Programming)
+- Walldorf: Headquarters von SAP (Deutschland)
+- SAP = "Systems, Applications and Products in Data Processing"
+- Standardsoftware, anpassbar durch Customizing und Erweiterungen (ABAP, SAP Fiori)
 
-* SAP S/4 HANA
-** Wurde im 2015 veröffentlicht
-** Datenbank: HANA (In-Memory-Plattform, >1TB RAM)
-** Programmiersprache: FIORI
+== Systemüberblick
 
+=== SAP R/3 (ERP)
+
+- Version: ERP 6.0 EHP8
+- Datenbank: Oracle 19c
+- Programmiersprache: ABAP (Advanced Business Application Programming)
+
+=== SAP S/4HANA
+
+- Erstveröffentlichung: 2015
+- In-Memory-Datenbank: SAP HANA
+- Oberfläche: SAP Fiori (UX), Backend-Entwicklung in ABAP
+
+[cols="1,1",options="header"]
 |===
-| Abkürzung | Bedeutung
+|Abkürzung |Bedeutung
 
-| EHP   | Enhancement Package
-| HANA  | High-Performance Analytic Appliance
-| ABAP  | Advanced Business Application Programming
-| FIORI | SAP User Interface
+|EHP |Enhancement Package
+|HANA |High-Performance Analytic Appliance
+|ABAP |Advanced Business Application Programming
+|FIORI |SAP Fiori (Benutzeroberfläche)
 |===
 
-Daten müssen von einem System ins andere Migriert (Portierung) werden.
+== Anpassbarkeit
 
-== Betriebswirtschaftliche SW
-=== Customizing:
-* Grundeinstellungen des Systems
-* Ergänzen von Auswahllisten
-* Abbilden von Geschäftsprozessen
+=== Customizing
 
-Wenn der Standard nicht ausreicht. -> ABAP-Entwicklung
+- Grundeinstellungen des Systems
+- Ergänzen von Auswahllisten
+- Abbilden von Geschäftsprozessen
 
-== Modularer Aufbau von SAP ERP:
-*Es gibt viele Module, die verschiedene Geschäftsbereiche abdecken:*
+Wenn der Standard nicht ausreicht: ABAP-Entwicklung (z. B. User-Exits, BAdIs, kundenspezifische Klassen).
 
-* FI (Financial Accounting)
-* MM (Materials Management)
-* RC (Human Capital Management)
+== Module (Auswahl)
 
-== Anpassbarkeit:
-* Customizing:
-** Bsp. Bestand < 0 -> Warnung
-* kleine Interpreter
-** Bsp. Formularinterpreter
-* kundenspezifische Code
-** User-Exits (leere Methoden, durch Kunden anpassbar)
-** Ableitung eigerner Klassen
-* SAP-Code ändern
-** Support, Releasewechsel
+- FI — Financial Accounting
+- MM — Materials Management
+- HCM — Human Capital Management
+- CRM — Customer Relationship Management
+- SRM — Supplier Relationship Management
+- PLM — Product Lifecycle Management
+- SCM — Supply Chain Management
 
 == SAP Business Suite
-image::assets/SAP Elemente.png[]
-image::assets/bs2.jpg[]
 
-+ SAP ERP
-+ SAP ERP Financials
-+ SAP ERP Human Capital Management
--> Basis für SAP S/4 HANA
+image::assets/SAP Elemente.png[SAP Elemente]
+image::assets/bs2.jpg[Business Suite Übersicht]
 
-== Betriebswirtschaftliche SW
-* *SAP-CRM:* Actives Kundenmanagement  (Unterstützt Mitarbeiter mit Kunden in kontakt zu bleiben)
-** BMW Regengewand
-* *SAP-SRM:* Lieferantenmanagement (Lieferant hat Einblick auf mein Lagerbestand)
-* *SAP-PLM:* Produktlebenszyklus management (Gesamte Lebenszyklus eines Produktes, von der Entwicklung bis zur Entsorgung)
-** Beispiel: Pickerl, Nespresso Kapseln
-* *SAP-SCM:* Supply Chain Management (Lieferkette optimieren, Lagerbestände minimieren)
+== Prozesse und Datenmigration
 
-== Klassensystem
-Merkmale anlegen -> Klasse mit Merkmalen anlegen -> Klasse Material zuordnen und befüllen
+Datenmigration: Daten zwischen Systemen portieren / migrieren.
 
 == Übungen
-=== Aufgabe 01
-* Primary Key: Eindeutige Identifikation eines Datensatzes *_-> ES KANN NICHT GEÄNDERT WERDEN_*
 
-==== Materialstamm anlegen
-* Mandant: Höchste Organisationseinheit z.B. (100,Konzern)
-* Buchungskreis: Kleinste Einheit eines Unternehmens z.B. (1010, Company Code 1010)
-* Werk: Ort der Produktion/Lagerung (1010, Plant 1 DE)
-* Lagerort: Ort innerhalb eines Werks (0001, Sekt.33)
+=== Aufgabe 1 — Materialstamm anlegen
 
+- Primary Key: Eindeutige Identifikation eines Datensatzes — darf nicht geändert werden.
+- Wichtige Stammdatenfelder:
+	* Mandant (z. B. 100)
+	* Buchungskreis (z. B. 1010)
+	* Werk (z. B. 1010)
+	* Lagerort (z. B. 0001)
 
-== Transaktionscodes
-* *mm01*: Material anlegen
-* *mm02*: Material ändern
-* *mm03*: Material anzeigen
-* *mmbe*: Bestandsübersicht
+==== Schritte (Kurz)
 
-== Begriffe
-* *Best Practice:* Die installation und übungsdatenbank von SAP
-* *Brownfield-Ansätze:* Bestehende Systeme werden auf neue Versionen aktualisiert
-* *Greenfield-Ansätze:* Neues System wird von Grund auf neu implementiert
+1. Transaktion `mm01` öffnen
+2. Pflichtfelder ausfüllen
+3. Speichern
+
+=== Aufgabe 2 — Anforderungen an Geschäftsprozesse
+
+- Einmal erfasste Daten sollten nicht mehrfach erfasst werden.
+- Alle beteiligten Systeme sollten mit denselben Stammdaten arbeiten.
+- Externe Systeme (Kunden, Lieferanten) sollten Daten erhalten können.
+
+==== Beispiel: Materialwirtschaft (vereinfachter Ablauf)
+
+BANF -> Anfrage -> Angebot -> Bestellung -> Wareneingang
+
+image::assets/Bild3.jpg[Materialwirtschaft Ablauf]
+image::assets/Bild4.jpg[Materialwirtschaft Ablauf]
+
+== Transaktionscodes (Auswahl)
+
+- `mm01` — Material anlegen
+- `mm02` — Material ändern
+- `mm03` — Material anzeigen
+- `mmbe` — Bestandsübersicht
+
+== Glossar
+
+- **Best Practice:** Vorlagen, Installations- und Übungsdatenbanken
+- **Brownfield:** Bestehende Systeme werden aktualisiert/migriert
+- **Greenfield:** Neues System wird von Grund auf neu implementiert
